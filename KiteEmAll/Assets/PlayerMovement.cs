@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private PlayerStats playerStats;
     [SerializeField] Joystick movementJoystick;
     private Rigidbody2D rbPlayer;
-    public float movementSpeed = 5;
 
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rbPlayer.velocity = new Vector2(movementJoystick.Horizontal, movementJoystick.Vertical) * movementSpeed;
+        rbPlayer.velocity = new Vector2(movementJoystick.Horizontal, movementJoystick.Vertical) * playerStats.movementSpeed.Value;
     }
 
 }

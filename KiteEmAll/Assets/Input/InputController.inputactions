@@ -1,0 +1,45 @@
+{
+    "name": "InputController",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "ca381e72-6ffe-4ab1-8e96-ad0549d6b5f9",
+            "actions": [
+                {
+                    "name": "ActiveAbility1",
+                    "type": "Button",
+                    "id": "a86c59bf-eff6-4fbd-b80b-0eb92b34c2ef",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "717fb58e-1f45-4d6f-b168-ea3fa935bac6",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActiveAbility1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "714cb95d-f082-45da-ba92-2bbc7612ac42",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActiveAbility1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
