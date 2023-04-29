@@ -13,7 +13,7 @@ public class ActiveAbilitySlot : MonoBehaviour
     float activeTime;
     AbilityState state = AbilityState.ready;
     public KeyCode key;// Trigger - Podpiać pod to button
-    private bool isPresed;
+    private bool buttonPressed = false;
     [SerializeField] Image Image;
     private ActiveAbility _activeAbility;
     public ActiveAbility activeAbility
@@ -41,16 +41,18 @@ public class ActiveAbilitySlot : MonoBehaviour
 
     void Update()//Ability state managment
     {
+
         switch (state)
         {
             case AbilityState.ready:
-                if (Input.GetKeyDown(key))
+                if (buttonPressed || Input.GetKeyDown(key))
                 {
                     Debug.Log("Ability Activated");
                     activeAbility.Activate();//Aktywuj z źródła
                     activeTime = activeAbility.activeTime;
                     state = AbilityState.active;
                 }
+                buttonPressed = false;
                 break;
             case AbilityState.active:
                 if (activeTime > 0)
@@ -75,6 +77,12 @@ public class ActiveAbilitySlot : MonoBehaviour
                 }
                 break;
         }
+
+    }
+    public void setButtonPressed()
+    {
+        Debug.Log("AbilitySlot Pressed");
+        buttonPressed = true;
 
     }
 }

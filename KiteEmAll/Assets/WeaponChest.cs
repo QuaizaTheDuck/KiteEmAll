@@ -1,10 +1,12 @@
 using UnityEngine;
 
 
-public class ItemChest : MonoBehaviour
+public class WeaponChest : MonoBehaviour
 {
-    [SerializeField] PassiveItem passiveItem;
-    [SerializeField] PassiveItemInventory passiveItemInventory;
+
+    [SerializeField] WeaponManager weaponManager;
+    [SerializeField] WeaponData weaponInsideChest;
+
     [SerializeField] SpriteRenderer spriteRenderer;
     private bool isInRange = false;
     private bool isEmpty = false;
@@ -12,7 +14,7 @@ public class ItemChest : MonoBehaviour
     public bool isPressed = false;
     private void Start()
     {
-        spriteRenderer.sprite = passiveItem.Icon;
+        //spriteRenderer.sprite = weaponInsideChest;
         spriteRenderer.enabled = false;
     }
     public void setPress()
@@ -27,7 +29,7 @@ public class ItemChest : MonoBehaviour
         {
             if (!isEmpty)
             {
-                passiveItemInventory.AddItem(passiveItem);
+                weaponManager.AddWeapon(weaponInsideChest);
                 Destroy(this.gameObject);
             }
         }
@@ -35,7 +37,7 @@ public class ItemChest : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         isInRange = true;
-        spriteRenderer.enabled = true;
+        //spriteRenderer.enabled = true;
     }
     private void OnTriggerExit2D(Collider2D other)
     {

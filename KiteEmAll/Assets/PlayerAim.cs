@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerAim : MonoBehaviour
 {
     [SerializeField] Joystick aimJoystick;
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        Debug.DrawRay(transform.position, new Vector2(aimJoystick.Horizontal, aimJoystick.Vertical) * 20, Color.red);
+        //rotate Player
         if (aimJoystick.Horizontal != 0 || aimJoystick.Vertical != 0)
-        {
             transform.rotation = Quaternion.LookRotation(Vector3.forward, new Vector2(aimJoystick.Horizontal, aimJoystick.Vertical));
-        }
     }
 }

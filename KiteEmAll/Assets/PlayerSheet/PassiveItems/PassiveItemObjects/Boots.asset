@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Boots
   Icon: {fileID: 21300000, guid: 1a8d144e1896c874eafe17c1cf4b6f2c, type: 3}
-  movementSpeedBonusFlat: 5
-  movementSpeedBonusPercentAdd: 0
+  movementSpeedBonusFlat: 0
+  movementSpeedBonusPercentAdd: 0.2
   movementSpeedBonusPercentMult: 0
+  weaponActivationRateMulti: 0.5

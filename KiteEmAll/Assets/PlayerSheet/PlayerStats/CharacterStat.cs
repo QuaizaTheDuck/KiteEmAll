@@ -105,6 +105,6 @@ public class CharacterStat
             }
         }
 
-        return (float)Math.Round(finalValue, 4);
+        return finalValue;
     }
 }

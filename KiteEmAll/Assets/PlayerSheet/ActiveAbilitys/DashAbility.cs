@@ -8,8 +8,13 @@ public class DashAbility : ActiveAbility
     {
         Debug.Log("DashActivated");
         if (player == null)
+        {
             player = GameObject.FindGameObjectWithTag("Player");
-
+        }
+        if (player == null)
+        {
+            Debug.Log("PlayerNotFound");
+        }
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         if (playerStats.movementSpeed.Value < 20)
             playerStats.movementSpeed.AddModifier(new StatModifier(20, StatModType.Flat, this));

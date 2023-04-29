@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rbPlayer = GetComponent<Rigidbody2D>();
+        Debug.developerConsoleVisible = true;
     }
 
     private void FixedUpdate()

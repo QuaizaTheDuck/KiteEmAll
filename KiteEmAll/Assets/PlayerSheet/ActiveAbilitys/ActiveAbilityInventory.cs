@@ -31,7 +31,6 @@ public class ActiveAbilityInventory : MonoBehaviour
     {
         if (IsFull())
             return false;
-        Debug.Log("Items added");
         activeAbilities.Add(activeAbility);
         RefreshUI();
         return true;

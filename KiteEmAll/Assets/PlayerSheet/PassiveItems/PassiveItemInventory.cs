@@ -9,7 +9,13 @@ public class PassiveItemInventory : MonoBehaviour
     [SerializeField] PassiveItemSlot[] passiveItemSlots;
 
 
-
+    private void Start()
+    {
+        foreach (PassiveItem passiveItem in passiveItems)
+        {
+            passiveItem.Equip(playerStats);
+        }
+    }
     private void OnValidate()
     {
         if (passiveItemsParent != null)

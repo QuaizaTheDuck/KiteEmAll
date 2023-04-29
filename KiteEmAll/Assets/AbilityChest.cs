@@ -1,18 +1,19 @@
 using UnityEngine;
 
 
-public class ItemChest : MonoBehaviour
+public class AbilityChest : MonoBehaviour
 {
-    [SerializeField] PassiveItem passiveItem;
-    [SerializeField] PassiveItemInventory passiveItemInventory;
+    [SerializeField] ActiveAbility abilityItem;
+    [SerializeField] ActiveAbilityInventory activeAbilityInventory;
     [SerializeField] SpriteRenderer spriteRenderer;
+
     private bool isInRange = false;
     private bool isEmpty = false;
 
     public bool isPressed = false;
     private void Start()
     {
-        spriteRenderer.sprite = passiveItem.Icon;
+        spriteRenderer.sprite = abilityItem.icon;
         spriteRenderer.enabled = false;
     }
     public void setPress()
@@ -27,7 +28,7 @@ public class ItemChest : MonoBehaviour
         {
             if (!isEmpty)
             {
-                passiveItemInventory.AddItem(passiveItem);
+                activeAbilityInventory.AddItem(abilityItem);
                 Destroy(this.gameObject);
             }
         }
