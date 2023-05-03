@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    [SerializeField] public Transform playerTrasform;
+
     //Player Character stats
     public CharacterStat movementSpeed = new CharacterStat(5);
 
@@ -29,6 +31,14 @@ public class PlayerStats : MonoBehaviour
     public CharacterStat projectileTimeMulti = new CharacterStat(1);
     //FLAT Ile celów może trafic 1 pocisk
     public CharacterStat addedProjectilePierce = new CharacterStat(0);
+    //MULTI Homing range multi
+    public CharacterStat homingRangeMulti = new CharacterStat(1);
+    //FLAT Homing Angle
+    public CharacterStat homingAngle = new CharacterStat(0);
+    //MULTI Increased area of effect
+    public CharacterStat areaOfEffectMulti = new CharacterStat(0);
+
+
     public void Equip(PassiveItem passiveItem)
     {
         passiveItem.Equip(this);

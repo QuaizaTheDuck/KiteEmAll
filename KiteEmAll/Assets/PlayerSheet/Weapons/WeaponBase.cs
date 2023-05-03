@@ -5,24 +5,29 @@ using UnityEngine;
 public abstract class WeaponBase : MonoBehaviour
 {
     //Referencja do statystyk gracza
-    [SerializeField] protected PlayerStats playerStats;
-    [SerializeField] protected float baseWeaponDamage = 80;
+    private PlayerStats playerStats;
+    [SerializeField] private float baseWeaponDamage = 80;
     //Jaki procent FLAT obrażeń gracza zadaje broń
-    [SerializeField] protected float addedDamageEffectiveness = 1;
+    [SerializeField] private float addedDamageEffectiveness = 1;
     //Czas po którym sie aktywuje
-    [SerializeField] protected float activationCooldown = 1;
-    [SerializeField] protected int baseProjectileCount = 1;
-    [SerializeField] protected float addedProjectileEffectiveness = 1;
-    [SerializeField] protected float baseProjectileSpeed = 10;
-    [SerializeField] protected float baseProjectileTime = 2;
-    [SerializeField] protected float baseProjectileSpread = 10;
-    [SerializeField] protected int baseProjectilePierce = 0;
+    [SerializeField] private float activationCooldown = 1;
+    [SerializeField] private int baseProjectileCount = 1;
+    [SerializeField] private float addedProjectileEffectiveness = 1;
+    [SerializeField] private float baseProjectileSpeed = 10;
+    [SerializeField] private float baseProjectileTime = 2;
+    [SerializeField] private float baseProjectileSpread = 10;
+    [SerializeField] private int baseProjectilePierce = 1;
+    [SerializeField] private float baseAreaOfEffect = 1;
+    private float baseHomingRange;//baza to baseProjectileSpeed / 2
     private float baseActivationRate;
     private float activationRate;
     private float activationTimer;
     private int finalDamage;
+    public GameEvent onPlayerWepActivation;
+
     private void Awake()
     {
+        baseHomingRange = baseProjectileSpeed / 2;
         //Znajdz Obiekt Gracza wyciagnij z niego PlayerStats
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
@@ -41,35 +46,47 @@ public abstract class WeaponBase : MonoBehaviour
                 calculateProjectileSpeed(baseProjectileSpeed, playerStats.projectileSpeedMulti.Value),
                 calculateProjectileTime(baseProjectileTime, playerStats.projectileTimeMulti.Value),
                 calculateProjectileSpread(baseProjectileSpread, playerStats.projectileSpreadMulti.Value),
-                calculatePierce(baseProjectilePierce, playerStats.addedProjectilePierce.Value)
+                calculatePierce(baseProjectilePierce, playerStats.addedProjectilePierce.Value),
+                calculateHomingRange(baseHomingRange, playerStats.homingRangeMulti.Value),
+                playerStats.homingAngle.Value,
+                calcualteAreaOfEffect(baseAreaOfEffect, playerStats.areaOfEffectMulti.Value)
                 );
+            onPlayerWepActivation.Raise(this, (1 / addedDamageEffectiveness) * baseWeaponDamage);
             activationTimer = 1 / (baseActivationRate * playerStats.weaponActivationRateMulti.Value);
             //Debug.Log(activationTimer);
         }
     }
-    public abstract void Activate(int damage, int projectileCount, float projectileSpeed, float projectileTime, float projectileSpread, int projectilePierce);
-    protected int calculateDamage(float baseWeaponDamage, float weaponAddedDamage, float addedDamageEffectiveness, float weaponDamageMulti)
+    public abstract void Activate(int damage, int projectileCount, float projectileSpeed, float projectileTime, float projectileSpread, int projectilePierce, float homingRange, float homingAngle, float areaOfEffect);
+    private float calcualteAreaOfEffect(float baseAreaOfEffect, float areaOfEffectMulti)
+    {
+        return baseAreaOfEffect * areaOfEffectMulti;
+    }
+    private float calculateHomingRange(float baseHomingRange, float homingRangeMulti)
+    {
+        return baseHomingRange * homingRangeMulti;
+    }
+    private int calculateDamage(float baseWeaponDamage, float weaponAddedDamage, float addedDamageEffectiveness, float weaponDamageMulti)
     {
         return (int)((baseWeaponDamage + (weaponAddedDamage * weaponAddedDamage)) * weaponDamageMulti);
     }
-    protected int calculateProjectileCount(int baseProjectileCount, float additionalProjectiles, float addedProjectileEffectiveness)
+    private int calculateProjectileCount(int baseProjectileCount, float additionalProjectiles, float addedProjectileEffectiveness)
     {
         return (int)(baseProjectileCount + (additionalProjectiles * addedProjectileEffectiveness));
     }
-    protected float calculateProjectileSpeed(float baseProjectileSpeed, float projectileSpeedMulti)
+    private float calculateProjectileSpeed(float baseProjectileSpeed, float projectileSpeedMulti)
     {
         return baseProjectileSpeed * projectileSpeedMulti;
     }
-    protected float calculateProjectileTime(float baseProjectileTime, float projectileTimeMulti)
+    private float calculateProjectileTime(float baseProjectileTime, float projectileTimeMulti)
     {
-        return projectileTimeMulti * projectileTimeMulti;
+        return baseProjectileTime * projectileTimeMulti;
     }
-    protected float calculateProjectileSpread(float baseProjectileSpread, float projectileSpreadMulti)
+    private float calculateProjectileSpread(float baseProjectileSpread, float projectileSpreadMulti)
     {
         return baseProjectileSpread * projectileSpreadMulti;
     }
-    protected int calculatePierce(int baseProjectilePierce, float addedprojectilePierce)
+    private int calculatePierce(int baseProjectilePierce, float addedProjectilePierce)
     {
-        return (int)(baseProjectileSpread + addedprojectilePierce);
+        return (int)(baseProjectilePierce + addedProjectilePierce);
     }
 }

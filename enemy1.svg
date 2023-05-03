@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1500"
+   height="1500"
+   viewBox="0 0 396.87499 396.87501"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="enemy1.svg"
+   inkscape:export-filename="D:\Projects\P_KiteEmAll\Img\enemy1.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     units="px"
+     objecttolerance="10000"
+     inkscape:zoom="0.48517716"
+     inkscape:cx="920.28241"
+     inkscape:cy="681.19448"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="385"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer3">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9"
+       color="#ff3fff"
+       opacity="0.1254902"
+       empcolor="#ff3fff"
+       empopacity="0.4"
+       spacingy="6.6145833"
+       spacingx="6.6145833"
+       empspacing="4" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Warstwa 3">
+    <path
+       style="fill:#ff5555;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 198.4375,317.5 -26.45834,26.45833 v -79.375 L 145.52083,238.125 165.36458,218.28125 V 105.83333 L 185.20833,79.374999 V 205.05208 l 13.22917,-6.61458 13.22916,6.61458 V 79.374999 l 19.84375,26.458331 v 112.44792 l 19.84375,19.84375 -26.45833,26.45833 v 79.375 z"
+       id="path1064" />
+    <path
+       style="fill:#807c8e;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 158.75,52.916666 -66.145834,52.916664 19.843754,79.375 -59.531254,79.375 L 26.458333,291.04166 52.916666,317.5 132.29166,291.04166 119.0625,317.5 132.29166,343.95833 158.75,317.5 V 264.58333 L 132.29166,238.125 158.75,211.66666 198.4375,185.20833 238.125,211.66666 264.58333,238.125 238.125,264.58333 V 317.5 l 26.45833,26.45833 13.22917,-26.45833 -13.22917,-26.45834 79.375,26.45834 26.45833,-26.45834 -26.45833,-26.45833 -59.53125,-79.375 19.84375,-79.375 L 238.125,52.916666 264.58333,105.83333 238.125,158.75 198.4375,132.29166 158.75,158.75 132.29166,105.83333 Z"
+       id="path1165" />
+  </g>
+</svg>

@@ -6,6 +6,6 @@ public class DefaultEnemy : MonoBehaviour
 {
     public void takeDamage(float damageTaken)
     {
-        Debug.Log(damageTaken);
+        // Debug.Log(gameObject.name + " Took " + damageTaken);
     }
 }

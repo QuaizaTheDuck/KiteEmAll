@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6172688963605069890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1506237594891601065}
+  - component: {fileID: -7505983278396146189}
+  m_Layer: 0
+  m_Name: RailGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1506237594891601065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172688963605069890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7505983278396146189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172688963605069890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518cce5b5899f454d8e1bff871f15624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseWeaponDamage: 200
+  addedDamageEffectiveness: 1.5
+  activationCooldown: 2
+  baseProjectileCount: 1
+  addedProjectileEffectiveness: 1
+  baseProjectileSpeed: 80
+  baseProjectileTime: 1
+  baseProjectileSpread: 3
+  baseProjectilePierce: 10
+  baseAreaOfEffect: 1
+  onPlayerWepActivation: {fileID: 11400000, guid: b428c95802f3d5142b4a0c49e93a2a4d, type: 2}
+  projectilePrefab: {fileID: 4312969289196602633, guid: 72fd71737b7d5c44b82ba6428a1c6a26, type: 3}

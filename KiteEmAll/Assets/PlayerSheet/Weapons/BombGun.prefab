@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3215426924142300150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8263672492021980426}
+  - component: {fileID: -4015119109530745094}
+  m_Layer: 0
+  m_Name: BombGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8263672492021980426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215426924142300150}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4015119109530745094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215426924142300150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d990bce8f71079341bba34fb61f3ae3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseWeaponDamage: 80
+  addedDamageEffectiveness: 1
+  activationCooldown: 1.5
+  baseProjectileCount: 1
+  addedProjectileEffectiveness: 1
+  baseProjectileSpeed: 1.5
+  baseProjectileTime: 2
+  baseProjectileSpread: 15
+  baseProjectilePierce: 1
+  baseAreaOfEffect: 1
+  onPlayerWepActivation: {fileID: 11400000, guid: b428c95802f3d5142b4a0c49e93a2a4d, type: 2}
+  projectilePrefab: {fileID: 1574759261239256665, guid: 19e8ec46188ed4449b39b3c78c9cf10d, type: 3}

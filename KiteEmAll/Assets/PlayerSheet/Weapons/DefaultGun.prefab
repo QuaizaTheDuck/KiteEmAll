@@ -44,14 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03c9b76a5a30aa47ac55a176736e941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
   baseWeaponDamage: 80
   addedDamageEffectiveness: 1
   activationCooldown: 1
   baseProjectileCount: 1
   addedProjectileEffectiveness: 1
   baseProjectileSpeed: 10
-  baseProjectileTime: 2
+  baseProjectileTime: 2.5
   baseProjectileSpread: 10
-  baseProjectilePierce: 0
+  baseProjectilePierce: 1
+  baseAreaOfEffect: 1
+  onPlayerWepActivation: {fileID: 11400000, guid: b428c95802f3d5142b4a0c49e93a2a4d, type: 2}
+  onWepActivation: {fileID: 11400000, guid: f51f7c03f3f82f64caa14d2a79ee8b76, type: 2}
   projectilePrefab: {fileID: 4312969289196602633, guid: 72fd71737b7d5c44b82ba6428a1c6a26, type: 3}

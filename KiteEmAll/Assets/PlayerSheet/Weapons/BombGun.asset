@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e292b4984db7044783439a3ce7ccc41, type: 3}
+  m_Name: BombGun
+  m_EditorClassIdentifier: 
+  Name: BombGun
+  Icon: {fileID: 0}
+  weaponBasePrefab: {fileID: 3215426924142300150, guid: e25ae83ecac473848a96ff997dcf1af5, type: 3}
