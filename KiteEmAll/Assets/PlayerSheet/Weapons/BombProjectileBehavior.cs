@@ -55,10 +55,11 @@ public class BombProjectileBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hit)
     {
-        DefaultEnemy enemy = hit.GetComponent<DefaultEnemy>();
+
+        EnemyBase enemy = hit.GetComponent<EnemyBase>();
         if (enemy != null)
         {
-            enemy.takeDamage(projectileDamage);
+            enemy.TakeDamage(projectileDamage);
             Destroy(gameObject);
         }
     }
@@ -77,8 +78,13 @@ public class BombProjectileBehavior : MonoBehaviour
         //znajdz najblizszy target
         foreach (Collider2D target in targets)
         {
-            DefaultEnemy enemy = target.GetComponent<DefaultEnemy>();
-            enemy.takeDamage(projectileDamage);
+
+            EnemyBase enemy = target.GetComponent<EnemyBase>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(projectileDamage);
+            }
+
         }
 
     }

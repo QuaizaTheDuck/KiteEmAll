@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class homingProjectile : MonoBehaviour
+public class trasferExpToPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

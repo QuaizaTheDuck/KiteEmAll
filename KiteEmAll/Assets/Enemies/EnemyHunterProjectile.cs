@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultBulletBehavior : MonoBehaviour
+public class EnemyHunterProjectile : MonoBehaviour
 {
-    private int projectileDamage;
+    private float projectileDamage;
     private float projectileSpeed;
     private float projectileTime;
-    private int projectilePierce;
     //Homing
     private float homingRange;
     private float homingAngle;
@@ -17,17 +16,15 @@ public class DefaultBulletBehavior : MonoBehaviour
     private Transform currentTarget;
 
     public void setDefaultProjectileStats(
-        int projectileDamage,
+        float projectileDamage,
         float projectileSpeed,
         float projectileTime,
-        int projectilePierce,
         float homingRange,
         float homingAngle)
     {
         this.projectileDamage = projectileDamage;
         this.projectileSpeed = projectileSpeed;
         this.projectileTime = projectileTime;
-        this.projectilePierce = projectilePierce;
         this.homingRange = homingRange;
         this.homingAngle = homingAngle;
     }
@@ -57,13 +54,8 @@ public class DefaultBulletBehavior : MonoBehaviour
         if (lifeTimer >= projectileTime)
             Destroy(gameObject);
 
-        if (lifeTimer >= projectileTime / 2)
-        {
-            float opacity = ((projectileTime - lifeTimer) + 0.5f) / projectileTime;
-            Color color = gameObject.GetComponent<SpriteRenderer>().color;
-            color.a = opacity;
-            gameObject.GetComponent<SpriteRenderer>().color = color;
-        }
+
+        projectileSpeed = projectileSpeed + (projectileSpeed * (lifeTimer / projectileTime)) * Time.deltaTime;
 
         if (homingAngle > 0)
         {
@@ -85,18 +77,12 @@ public class DefaultBulletBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D hit)
     {
-        if (projectilePierce > 0)
+        PlayerStats enemy = hit.GetComponent<PlayerStats>();
+        if (enemy != null)
         {
-            EnemyBase enemy = hit.GetComponent<EnemyBase>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(projectileDamage);
-                projectilePierce--;
-            }
-            if (projectilePierce <= 0)
-            {
-                Destroy(gameObject);
-            }
+            enemy.TakeDamage(projectileDamage);
         }
+
     }
 }
+

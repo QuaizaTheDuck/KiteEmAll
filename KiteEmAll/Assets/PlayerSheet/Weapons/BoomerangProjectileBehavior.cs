@@ -64,10 +64,10 @@ public class BoomerangProjectileBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D hit)
     {
 
-        DefaultEnemy enemy = hit.GetComponent<DefaultEnemy>();
+        EnemyBase enemy = hit.GetComponent<EnemyBase>();
         if (enemy != null)
         {
-            enemy.takeDamage(projectileDamage);
+            enemy.TakeDamage(projectileDamage);
         }
         if (zawraca)
             if (hit.CompareTag("Player"))
