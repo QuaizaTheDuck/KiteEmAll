@@ -18,7 +18,7 @@ public class BombProjectileBehavior : MonoBehaviour
     [SerializeField] private LayerMask homingTargetLayer;
     [SerializeField] private ParticleSystem particleSystemPrefab;
     private Transform currentTarget;
-
+    [SerializeField] private GameObject destroyParticleEffectPrefab;
     private Rigidbody2D rb;
 
     public void setDefaultProjectileStats(
@@ -59,6 +59,7 @@ public class BombProjectileBehavior : MonoBehaviour
         EnemyBase enemy = hit.GetComponent<EnemyBase>();
         if (enemy != null)
         {
+            Instantiate(destroyParticleEffectPrefab, transform.position, Quaternion.identity);
             enemy.TakeDamage(projectileDamage);
             Destroy(gameObject);
         }
@@ -83,6 +84,7 @@ public class BombProjectileBehavior : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(projectileDamage);
+
             }
 
         }

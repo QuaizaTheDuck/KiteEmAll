@@ -10,11 +10,14 @@ enum AbilityState
 public class ActiveAbilitySlot : MonoBehaviour
 {
     float cooldownTime;
+    float imageAnimationTimer = 0;
     float activeTime;
     AbilityState state = AbilityState.ready;
     public KeyCode key;// Trigger - Podpiać pod to button
     private bool buttonPressed = false;
     [SerializeField] Image Image;
+    private Color currentColor;
+    [SerializeField] private float colorSpeed = 1f;
     private ActiveAbility _activeAbility;
     public ActiveAbility activeAbility
     {
@@ -41,14 +44,12 @@ public class ActiveAbilitySlot : MonoBehaviour
 
     void Update()//Ability state managment
     {
-
         switch (state)
         {
             case AbilityState.ready:
-                if (buttonPressed || Input.GetKeyDown(key))
+                if (buttonPressed)
                 {
-                    Debug.Log("Ability Activated");
-                    activeAbility.Activate();//Aktywuj z źródła
+                    activeAbility.Activate();
                     activeTime = activeAbility.activeTime;
                     state = AbilityState.active;
                 }
@@ -58,6 +59,11 @@ public class ActiveAbilitySlot : MonoBehaviour
                 if (activeTime > 0)
                 {
                     activeTime -= Time.deltaTime;
+                    currentColor = Image.color;
+                    currentColor.r = Mathf.Sin(Time.time * colorSpeed) * 0.5f + 0.5f;
+                    currentColor.g = Mathf.Sin(Time.time * colorSpeed + Mathf.PI * 2f / 3f) * 0.5f + 0.5f;
+                    currentColor.b = Mathf.Sin(Time.time * colorSpeed + Mathf.PI * 4f / 3f) * 0.5f + 0.5f;
+                    Image.color = currentColor;
                 }
                 else
                 {
@@ -70,19 +76,22 @@ public class ActiveAbilitySlot : MonoBehaviour
                 if (cooldownTime > 0)
                 {
                     cooldownTime -= Time.deltaTime;
+                    imageAnimationTimer += Time.deltaTime;
+                    Image.fillAmount = imageAnimationTimer / activeAbility.cooldownTime;
+                    Image.color = Color.white;
                 }
                 else
                 {
+                    Image.fillAmount = 1;
+                    imageAnimationTimer = 0;
                     state = AbilityState.ready;
                 }
                 break;
         }
-
     }
     public void setButtonPressed()
     {
-        Debug.Log("AbilitySlot Pressed");
-        buttonPressed = true;
-
+        if (state == AbilityState.ready)
+            buttonPressed = true;
     }
 }

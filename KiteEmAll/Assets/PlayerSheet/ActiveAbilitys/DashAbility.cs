@@ -1,12 +1,10 @@
 using UnityEngine;
 
-[CreateAssetMenu]
 public class DashAbility : ActiveAbility
 {
     private GameObject player = null;
     public override void Activate()
     {
-        Debug.Log("DashActivated");
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");

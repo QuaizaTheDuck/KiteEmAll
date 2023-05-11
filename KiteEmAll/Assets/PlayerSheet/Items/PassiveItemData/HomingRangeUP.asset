@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f29f91c7dfeab5478ef4451b561b20a, type: 3}
+  m_Name: HomingRangeUP
+  m_EditorClassIdentifier: 
+  itemName: HomingRangeUP
+  icon: {fileID: 21300000, guid: 8082102a4f8fcc447ab6816494e38619, type: 3}
+  description: 
+  maxHpBonusFlat: 0
+  maxHpPercentAdd: 0
+  maxHpPercentMult: 0
+  regenHpBonusFlat: 0
+  regenHpPercentAdd: 0
+  regenHpPercentMult: 0
+  movementSpeedBonusFlat: 0
+  movementSpeedBonusPercentAdd: 0
+  movementSpeedBonusPercentMult: 0
+  weaponAddedDamageBonusFlat: 0
+  weaponDamageMultiBonusPercentAdd: 0
+  weaponDamageMultiBonusPercentMult: 0
+  weaponActivationRateMultiBonusPercentAdd: 0
+  weaponActivationRateMultiBonusPercentMult: 0
+  additionalProjectilesBonusFlat: 0
+  additionalProjectilesBonusPercentAdd: 0
+  projectileSpreadMultiBonusPercentAdd: 0
+  projectileSpreadMultiBonusPercentMult: 0
+  projectileSpeedMultiBonusPercentAdd: 0
+  projectileSpeedMultiBonusPercentMult: 0
+  projectileTimeMultiBonusPercentAdd: 0
+  projectileTimeMultiBonusPercentMult: 0
+  addedProjectilePierceBonusFlat: 0
+  addedProjectilePierceBonusPercentAdd: 0
+  homingRangeMultiBonusPercentAdd: 0.1
+  homingRangeMultiBonusPercentMult: 0
+  homingAngleBonusFlat: 0
+  homingAngleBonusPercentAdd: 0
+  homingAngleBonusPercentMult: 0
+  areaOfEffectMultiBonusPercentAdd: 0
+  areaOfEffectMultiBonusPercentMult: 0
+  gemPickUpRadiusBonusFlat: 0
+  gemPickUpRadiusBonusPercentAdd: 0
+  gemPickUpRadiusBonusPercentMult: 0

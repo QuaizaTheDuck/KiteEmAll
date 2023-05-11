@@ -10,7 +10,7 @@ public class CharacterStat
     {
         get
         {
-            if (isDirty || BaseValue != lastBaseValue)// ||> Przelicz jeśli zmieniono BaseValue
+            if (isDirty || BaseValue != lastBaseValue)
             {
                 lastBaseValue = BaseValue;
                 _value = CalculateFinalValue();
@@ -23,7 +23,6 @@ public class CharacterStat
     protected bool isDirty = true;
     protected float _value;
     protected float lastBaseValue = float.MinValue;
-
     protected readonly List<StatModifier> statModifiers;
     public readonly ReadOnlyCollection<StatModifier> StatModifiers;
 
@@ -75,6 +74,7 @@ public class CharacterStat
             return 1;
         return 0;//if(a.Order == b.Order) obojetne
     }
+
     //Oblicza finalną wartość statystyki
     protected float CalculateFinalValue()
     {
@@ -85,9 +85,9 @@ public class CharacterStat
         {
             StatModifier mod = statModifiers[i];
 
-            if (mod.Type == StatModType.Flat)//SumFlat
+            if (mod.Type == StatModType.Flat)
             {
-                finalValue += statModifiers[i].Value;
+                finalValue += statModifiers[i].Value;//flat
             }
             else if (mod.Type == StatModType.PercentAdd)
             {
@@ -95,7 +95,7 @@ public class CharacterStat
                 //sumujemy mody typu PercentAdd aż dotrzemy do innego typu lub końca listy
                 if (i + 1 >= statModifiers.Count || statModifiers[i + 1].Type != StatModType.PercentAdd)
                 {
-                    finalValue *= 1 + sumPercentAdd;
+                    finalValue *= 1 + sumPercentAdd;//%inc
                     sumPercentAdd = 0;
                 }
             }
@@ -104,7 +104,6 @@ public class CharacterStat
                 finalValue *= 1 + mod.Value;
             }
         }
-
         return finalValue;
     }
 }

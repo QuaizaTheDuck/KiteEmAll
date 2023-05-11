@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BoomerangGun
   m_EditorClassIdentifier: 
   Name: BoomerangGun
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 7cc310dbc910c3d46953136f13c539c5, type: 3}
   weaponBasePrefab: {fileID: 8963483515629844119, guid: 1a0d71629ec8a7a44bcb0b9eae79ce17, type: 3}

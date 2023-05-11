@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e095969b933b4a81c2f4ff64d7096, type: 3}
+  m_Name: Slowdown
+  m_EditorClassIdentifier: 
+  abilityName: Slowdown
+  icon: {fileID: 21300000, guid: 02f8f19cc94792d47b4c090605f1a19e, type: 3}
+  casterTag: Player
+  cooldownTime: 20
+  activeTime: 3
+  slowdownVisuals: {fileID: 2484482745486300336, guid: cd25086cdda1a4d4ca7458f4c5fc432a, type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024

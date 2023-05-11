@@ -7,7 +7,7 @@ public class PlayerSpriteRotation : MonoBehaviour
     [SerializeField] Joystick moveJoystick;
     [SerializeField] Quaternion moveDirection;
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (moveJoystick.Horizontal != 0 || moveJoystick.Vertical != 0)
         {

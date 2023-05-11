@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
@@ -9,9 +10,11 @@ public class EnemyBase : MonoBehaviour
     protected bool isStatMultiApplied = false;
     protected Rigidbody2D enemyRb;
     [SerializeField] GameObject ExpGem;
+    private Color originalColor;
     private void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
+        originalColor = gameObject.GetComponent<SpriteRenderer>().color;
     }
     virtual protected void Update()
     {
@@ -34,6 +37,7 @@ public class EnemyBase : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+        StartCoroutine(FlashWhite(originalColor));
 
         if (currentHealth <= 0)
         {
@@ -41,6 +45,29 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
+
+    private IEnumerator FlashWhite(Color originalColor)
+    {
+
+        // Set the color to white
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+
+        // Wait for a short duration
+        yield return new WaitForSeconds(0.05f);
+
+        // Gradually change the color back to the original color over 0.1 seconds
+        float time = 0f;
+        float duration = 0.05f;
+        while (time < duration)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, originalColor, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        // Set the color back to the original color
+        gameObject.GetComponent<SpriteRenderer>().color = originalColor;
+    }
     protected virtual void Die()
     {
         // Implement enemy death logic here

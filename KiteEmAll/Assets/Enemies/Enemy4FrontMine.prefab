@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4528302, g: 0.16874333, b: 0.27145097, a: 1}
+  m_Color: {r: 0.45098042, g: 0.16862746, b: 0.27058825, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
   expDroped: 90
   ExpGem: {fileID: 7554723555034245597, guid: da2c15af2207beb4b97a68e408ff1c2f, type: 3}
   maxHp: 80
-  damage: 15
-  timeToAttack: 0.4
+  damage: 10
+  timeToAttack: 0.5
   movementSpeed: 3
   projectilePrefab: {fileID: 6589486103935648551, guid: b173eae9df6bfae43bc1e468aa684d0d, type: 3}
   projectileSpread: 35

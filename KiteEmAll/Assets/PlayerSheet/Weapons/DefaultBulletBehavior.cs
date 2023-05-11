@@ -15,6 +15,7 @@ public class DefaultBulletBehavior : MonoBehaviour
     //Layer w którym proj szuka celu
     [SerializeField] private LayerMask homingTargetLayer;
     private Transform currentTarget;
+    [SerializeField] private GameObject destroyParticleEffectPrefab;
 
     public void setDefaultProjectileStats(
         int projectileDamage,
@@ -91,10 +92,12 @@ public class DefaultBulletBehavior : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(projectileDamage);
+                Instantiate(destroyParticleEffectPrefab, transform.position, Quaternion.identity);
                 projectilePierce--;
             }
             if (projectilePierce <= 0)
             {
+                Instantiate(destroyParticleEffectPrefab, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }

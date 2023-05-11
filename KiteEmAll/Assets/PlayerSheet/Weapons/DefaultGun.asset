@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DefaultGun
   m_EditorClassIdentifier: 
   Name: DefaultGun
-  Icon: {fileID: 21300000, guid: 3d7a07241e2c8864aa572d69f063f34b, type: 3}
+  Icon: {fileID: 21300000, guid: 26e543f4772a0c74e9d315646800dd58, type: 3}
   weaponBasePrefab: {fileID: 5099653287943589439, guid: 72664520594af0744b8cb461845fbdd2, type: 3}

@@ -16,7 +16,7 @@ public class PassiveItemSlot : MonoBehaviour
             }
             else
             {
-                Image.sprite = _passiveItem.Icon;
+                Image.sprite = _passiveItem.icon;
                 Image.enabled = true;
             }
         }

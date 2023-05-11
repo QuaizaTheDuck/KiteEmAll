@@ -17,6 +17,8 @@ public class BoomerangProjectileBehavior : MonoBehaviour
     private GameObject player;
     private Transform currentTarget;
 
+    [SerializeField] private GameObject destroyParticleEffectPrefab;
+
     public void setDefaultProjectileStats(
         Transform currentTarget,
         int projectileDamage,
@@ -67,11 +69,13 @@ public class BoomerangProjectileBehavior : MonoBehaviour
         EnemyBase enemy = hit.GetComponent<EnemyBase>();
         if (enemy != null)
         {
+            Instantiate(destroyParticleEffectPrefab, transform.position, Quaternion.identity);
             enemy.TakeDamage(projectileDamage);
         }
         if (zawraca)
             if (hit.CompareTag("Player"))
             {
+
                 Destroy(gameObject);
             }
 

@@ -139,6 +139,6 @@ MonoBehaviour:
   expDroped: 50
   ExpGem: {fileID: 7554723555034245597, guid: da2c15af2207beb4b97a68e408ff1c2f, type: 3}
   maxHp: 100
-  damage: 20
-  timeToAttack: 0
+  damage: 2
+  timeToAttack: 0.1
   movementSpeed: 3

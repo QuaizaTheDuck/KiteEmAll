@@ -48,11 +48,11 @@ MonoBehaviour:
   addedDamageEffectiveness: 0.15
   activationCooldown: 1
   baseProjectileCount: 8
-  addedProjectileEffectiveness: 2
+  addedProjectileEffectiveness: 1.5
   baseProjectileSpeed: 15
   baseProjectileTime: 0.7
   baseProjectileSpread: 40
   baseProjectilePierce: 1
   baseAreaOfEffect: 1
   onPlayerWepActivation: {fileID: 11400000, guid: b428c95802f3d5142b4a0c49e93a2a4d, type: 2}
-  projectilePrefab: {fileID: 4312969289196602633, guid: 72fd71737b7d5c44b82ba6428a1c6a26, type: 3}
+  projectilePrefab: {fileID: 8055563652143746905, guid: 7ba0820c5544fb54d819f2a1d0259988, type: 3}

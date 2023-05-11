@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DashAbility
   m_EditorClassIdentifier: 
   abilityName: Dash
-  icon: {fileID: 21300000, guid: 1a8d144e1896c874eafe17c1cf4b6f2c, type: 3}
+  icon: {fileID: 21300000, guid: d87fa0a40279bce4e987992b40582c9a, type: 3}
   casterTag: Player
-  cooldownTime: 3
+  cooldownTime: 5
   activeTime: 0.5

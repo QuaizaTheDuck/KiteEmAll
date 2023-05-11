@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ShotGun
   m_EditorClassIdentifier: 
   Name: ShotGun
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 9e3b67aa57e0e1745b496230055ddf54, type: 3}
   weaponBasePrefab: {fileID: 6134577738105752269, guid: c36f979690e40b945816daac9c71938b, type: 3}

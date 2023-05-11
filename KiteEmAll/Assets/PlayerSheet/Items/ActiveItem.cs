@@ -6,6 +6,7 @@ using UnityEngine;
 public class ActiveItem : PassiveItem
 {
     [SerializeField] GameObject pfActiveAbility;
+    [SerializeField] private string behaviorDescription;
 
     public override void Equip(PlayerStats player)
     {
@@ -15,5 +16,12 @@ public class ActiveItem : PassiveItem
         GameObject itemActiveAbility = Instantiate(pfActiveAbility, player.playerTrasform);
         ActivateItemBehavior prefabBehavior = itemActiveAbility.GetComponent<ActivateItemBehavior>();
         prefabBehavior.SetStats(player);
+    }
+
+    public override string ToString()
+    {
+        description = base.ToString();
+        description += behaviorDescription;
+        return description;
     }
 }

@@ -33,7 +33,6 @@ public class EnemySpawner : MonoBehaviour
         {
             if (isSpawning == false)
             {
-                //Debug.Log("Zaczynamy spawnic");
                 foreach (EnemyType enemyType in waves[currentWaveIndex].enemyTypes)
                 {
                     StartCoroutine(spawnEnemiesInWave(enemyType));
@@ -44,15 +43,15 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("ENEMY SPAWNER - KoniecFal");
+            //Debug.Log("ENEMY SPAWNER - KoniecFal");
             gameObject.SetActive(false);
         }
     }
     private IEnumerator waitUntilWaveEnds(float duration)
     {
-        Debug.Log("ENEMY SPAWNER - Rozpoczynam fale : " + currentWaveIndex);
+        //Debug.Log("ENEMY SPAWNER - Rozpoczynam fale : " + currentWaveIndex);
         yield return new WaitForSeconds(duration);
-        Debug.Log("ENEMY SPAWNER - Koniec fali : " + currentWaveIndex);
+        //Debug.Log("ENEMY SPAWNER - Koniec fali : " + currentWaveIndex);
         currentWaveIndex++;
         isSpawning = false;
     }

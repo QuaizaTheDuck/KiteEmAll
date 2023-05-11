@@ -8,7 +8,6 @@ public class ExpGem : MonoBehaviour
     public float expGranted = 0;
     private Transform target;
     private bool isPickedUp = false;
-
     private void Update()
     {
         if (isPickedUp)
@@ -32,6 +31,8 @@ public class ExpGem : MonoBehaviour
     }
     private void Start()
     {
+        transform.up = Random.insideUnitCircle.normalized;
+
         StartCoroutine(ChangeRotationDirectionAndSpeed());
     }
     public void setExpGranted(float exp)
