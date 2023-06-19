@@ -17,7 +17,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // sterowanie za pomocą joysticka
         direction = new Vector2(movementJoystick.Horizontal, movementJoystick.Vertical) * playerStats.movementSpeed.Value;
+
+        // dodanie sterowania za pomocą klawiatury
+        direction += new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * playerStats.movementSpeed.Value;
+
         rbPlayer.velocity = new Vector3(direction.x, direction.y, 0);
     }
 

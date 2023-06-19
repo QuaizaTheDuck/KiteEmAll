@@ -35,7 +35,7 @@ public class PassiveItemInventory : MonoBehaviour
         if (IsFull())
             return false;
 
-        passiveItem.Equip(playerStats);//Zakłada Item na gracza
+        //passiveItem.Equip(playerStats);//Zakłada Item na gracza
         passiveItems.Add(passiveItem);
 
         Debug.Log("item inv item added");

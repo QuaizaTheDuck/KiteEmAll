@@ -491,7 +491,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kite'Em'All
+  m_text: Kite'em All
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b48692fbe99b5004da3547214bc119c7, type: 2}
   m_sharedMaterial: {fileID: -3018359733370709034, guid: b48692fbe99b5004da3547214bc119c7, type: 2}

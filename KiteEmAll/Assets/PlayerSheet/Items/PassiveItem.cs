@@ -111,7 +111,10 @@ public class PassiveItem : Item
             player.weaponActivationRateMulti.AddModifier(new StatModifier(weaponActivationRateMultiBonusPercentMult, StatModType.PercentMult, this));
 
         if (additionalProjectilesBonusFlat != 0)
+        {
             player.additionalProjectiles.AddModifier(new StatModifier(additionalProjectilesBonusFlat, StatModType.Flat, this));
+            Debug.Log("XDXD");
+        }
         if (additionalProjectilesBonusPercentAdd != 0)
             player.additionalProjectiles.AddModifier(new StatModifier(additionalProjectilesBonusPercentAdd, StatModType.PercentAdd, this));
         /*       if (additionalProjectilesBonusPercentMult != 0)
@@ -192,88 +195,117 @@ public class PassiveItem : Item
         if (maxHpBonusFlat != 0)
             description += maxHpBonusFlat.ToString() + " to maximum Life" + "\n";
         if (maxHpPercentAdd != 0)
-            description += (maxHpPercentAdd * 100).ToString() + "% increased Life" + "\n";
-        if (maxHpPercentMult != 0)
+            description += (maxHpPercentAdd * 100).ToString() + "% to Life" + "\n";
+        if (maxHpPercentMult > 0)
             description += (maxHpPercentMult * 100).ToString() + "% more Life" + "\n";
+        if (maxHpPercentMult < 0)
+            description += (maxHpPercentMult * 100).ToString() + "% less Life" + "\n";
 
         if (regenHpBonusFlat != 0)
             description += regenHpBonusFlat.ToString() + "% additional Life Regeneration" + "\n";
         if (regenHpPercentAdd != 0)
-            description += (regenHpPercentAdd * 100).ToString() + "% increased Life Regeneration" + "\n";
-        if (regenHpPercentMult != 0)
+            description += (regenHpPercentAdd * 100).ToString() + "% to Life Regeneration" + "\n";
+        if (regenHpPercentMult > 0)
             description += (regenHpPercentMult * 100).ToString() + "% more Life Regeneration" + "\n";
+        if (regenHpPercentMult < 0)
+            description += (regenHpPercentMult * 100).ToString() + "% Less Life Regeneration" + "\n";
+
 
         if (movementSpeedBonusFlat != 0)
             description += movementSpeedBonusFlat.ToString() + " to Movement Speed" + "\n";
         if (movementSpeedBonusPercentAdd != 0)
-            description += (movementSpeedBonusPercentAdd * 100).ToString() + "% increased Movement Speed" + "\n";
-        if (movementSpeedBonusPercentMult != 0)
+            description += (movementSpeedBonusPercentAdd * 100).ToString() + "% to Movement Speed" + "\n";
+        if (movementSpeedBonusPercentMult > 0)
             description += (movementSpeedBonusPercentMult * 100).ToString() + "% more Movement Speed" + "\n";
+        if (movementSpeedBonusPercentMult < 0)
+            description += (movementSpeedBonusPercentMult * 100).ToString() + "% less Movement Speed" + "\n";
 
         if (weaponAddedDamageBonusFlat != 0)
             description += weaponAddedDamageBonusFlat.ToString() + " to Weapon Added Damage" + "\n";
         if (weaponDamageMultiBonusPercentAdd != 0)
-            description += (weaponDamageMultiBonusPercentAdd * 100).ToString() + "% increased Weapon Damage" + "\n";
-        if (weaponDamageMultiBonusPercentMult != 0)
+            description += (weaponDamageMultiBonusPercentAdd * 100).ToString() + "% to Weapon Damage" + "\n";
+        if (weaponDamageMultiBonusPercentMult > 0)
             description += (weaponDamageMultiBonusPercentMult * 100).ToString() + "% more Weapon Damage" + "\n";
+        if (weaponDamageMultiBonusPercentMult < 0)
+            description += (weaponDamageMultiBonusPercentMult * 100).ToString() + "% less Weapon Damage" + "\n";
 
         if (weaponActivationRateMultiBonusPercentAdd != 0)
-            description += (weaponActivationRateMultiBonusPercentAdd * 100).ToString() + "% increased Attack speed" + "\n";
-        if (weaponActivationRateMultiBonusPercentMult != 0)
+            description += (weaponActivationRateMultiBonusPercentAdd * 100).ToString() + "% to Attack speed" + "\n";
+        if (weaponActivationRateMultiBonusPercentMult > 0)
             description += (weaponActivationRateMultiBonusPercentMult * 100).ToString() + "% more Attack speed" + "\n";
+        if (weaponActivationRateMultiBonusPercentMult < 0)
+            description += (weaponActivationRateMultiBonusPercentMult * 100).ToString() + "% less Attack speed" + "\n";
 
         if (additionalProjectilesBonusFlat != 0)
             description += additionalProjectilesBonusFlat.ToString() + " Additional Projectiles" + "\n";
-        if (additionalProjectilesBonusPercentAdd != 0)
+        if (additionalProjectilesBonusPercentAdd > 0)
             description += (additionalProjectilesBonusPercentAdd * 100).ToString() + "% more Projectiles" + "\n";
+        if (additionalProjectilesBonusPercentAdd < 0)
+            description += (additionalProjectilesBonusPercentAdd * 100).ToString() + "% less Projectiles" + "\n";
         /*      if (additionalProjectilesBonusPercentMult != 0)
                   description += additionalProjectilesBonusPercentMult.ToString() + "% more Additional Projectiles" + "\n";
       */
         if (projectileSpreadMultiBonusPercentAdd != 0)
-            description += (projectileSpreadMultiBonusPercentAdd * 100).ToString() + "% increased Projectile Spread" + "\n";
-        if (projectileSpreadMultiBonusPercentMult != 0)
+            description += (projectileSpreadMultiBonusPercentAdd * 100).ToString() + "% to Projectile Spread" + "\n";
+        if (projectileSpreadMultiBonusPercentMult > 0)
             description += (projectileSpreadMultiBonusPercentMult * 100).ToString() + "% more Projectile Spread" + "\n";
+        if (projectileSpreadMultiBonusPercentMult < 0)
+            description += (projectileSpreadMultiBonusPercentMult * 100).ToString() + "% less Projectile Spread" + "\n";
 
         if (projectileSpeedMultiBonusPercentAdd != 0)
-            description += (projectileSpeedMultiBonusPercentAdd * 100).ToString() + "% increased Projectile Speed" + "\n";
-        if (projectileSpeedMultiBonusPercentMult != 0)
+            description += (projectileSpeedMultiBonusPercentAdd * 100).ToString() + "% to Projectile Speed" + "\n";
+        if (projectileSpeedMultiBonusPercentMult > 0)
             description += (projectileSpeedMultiBonusPercentMult * 100).ToString() + "% more Projectile Speed" + "\n";
+        if (projectileSpeedMultiBonusPercentMult < 0)
+            description += (projectileSpeedMultiBonusPercentMult * 100).ToString() + "% less Projectile Speed" + "\n";
 
         if (projectileTimeMultiBonusPercentAdd != 0)
-            description += (projectileTimeMultiBonusPercentAdd * 100).ToString() + "% increased Projectile Time" + "\n";
-        if (projectileTimeMultiBonusPercentMult != 0)
+            description += (projectileTimeMultiBonusPercentAdd * 100).ToString() + "% to Projectile Time" + "\n";
+        if (projectileTimeMultiBonusPercentMult > 0)
             description += (projectileTimeMultiBonusPercentMult * 100).ToString() + "% more Projectile Time" + "\n";
+        if (projectileTimeMultiBonusPercentMult > 0)
+            description += (projectileTimeMultiBonusPercentMult * 100).ToString() + "% less Projectile Time" + "\n";
 
         if (addedProjectilePierceBonusFlat != 0)
             description += addedProjectilePierceBonusFlat.ToString() + " to Pierce" + "\n";
-        if (addedProjectilePierceBonusPercentAdd != 0)
+        if (addedProjectilePierceBonusPercentAdd > 0)
             description += (addedProjectilePierceBonusPercentAdd * 100).ToString() + "% more Projectile Pierce" + "\n";
+        if (addedProjectilePierceBonusPercentAdd > 0)
+            description += (addedProjectilePierceBonusPercentAdd * 100).ToString() + "% less Projectile Pierce" + "\n";
         /*       if (addedProjectilePierceBonusPercentMult != 0)
                    description += addedProjectilePierceBonusPercentMult.ToString() + "% more Added Projectile Pierce" + "\n";
        */
         if (homingRangeMultiBonusPercentAdd != 0)
-            description += (homingRangeMultiBonusPercentAdd * 100).ToString() + "% increased Homing Range" + "\n";
-        if (homingRangeMultiBonusPercentMult != 0)
+            description += (homingRangeMultiBonusPercentAdd * 100).ToString() + "% to Homing Range" + "\n";
+        if (homingRangeMultiBonusPercentMult > 0)
             description += (homingRangeMultiBonusPercentMult * 100).ToString() + "% more Homing Range" + "\n";
+        if (homingRangeMultiBonusPercentMult < 0)
+            description += (homingRangeMultiBonusPercentMult * 100).ToString() + "% less Homing Range" + "\n";
 
         if (homingAngleBonusFlat != 0)
             description += homingAngleBonusFlat.ToString() + "° to Homing Angle" + "\n";
         if (homingAngleBonusPercentAdd != 0)
-            description += (homingAngleBonusPercentAdd * 100).ToString() + "% increased Homing Angle" + "\n";
-        if (homingAngleBonusPercentMult != 0)
+            description += (homingAngleBonusPercentAdd * 100).ToString() + "% to Homing Angle" + "\n";
+        if (homingAngleBonusPercentMult > 0)
             description += (homingAngleBonusPercentMult * 100).ToString() + "% more Homing Angle" + "\n";
+        if (homingAngleBonusPercentMult < 0)
+            description += (homingAngleBonusPercentMult * 100).ToString() + "% less Homing Angle" + "\n";
 
         if (areaOfEffectMultiBonusPercentAdd != 0)
-            description += (areaOfEffectMultiBonusPercentAdd * 100).ToString() + "% increased Area of Effect" + "\n";
-        if (areaOfEffectMultiBonusPercentMult != 0)
+            description += (areaOfEffectMultiBonusPercentAdd * 100).ToString() + "% to Area of Effect" + "\n";
+        if (areaOfEffectMultiBonusPercentMult > 0)
             description += (areaOfEffectMultiBonusPercentMult * 100).ToString() + "% more Area of Effect" + "\n";
+        if (areaOfEffectMultiBonusPercentMult < 0)
+            description += (areaOfEffectMultiBonusPercentMult * 100).ToString() + "% less Area of Effect" + "\n";
 
         if (gemPickUpRadiusBonusFlat != 0)
             description += gemPickUpRadiusBonusFlat.ToString() + " to Gem Pickup Radius" + "\n";
         if (gemPickUpRadiusBonusPercentAdd != 0)
-            description += (gemPickUpRadiusBonusPercentAdd * 100).ToString() + "% increased Gem Pickup Radius" + "\n";
-        if (gemPickUpRadiusBonusPercentMult != 0)
+            description += (gemPickUpRadiusBonusPercentAdd * 100).ToString() + "% to Gem Pickup Radius" + "\n";
+        if (gemPickUpRadiusBonusPercentMult > 0)
             description += (gemPickUpRadiusBonusPercentMult * 100).ToString() + "% more Gem Pickup Radius" + "\n";
+        if (gemPickUpRadiusBonusPercentMult < 0)
+            description += (gemPickUpRadiusBonusPercentMult * 100).ToString() + "% less Gem Pickup Radius" + "\n";
 
         return description;
     }

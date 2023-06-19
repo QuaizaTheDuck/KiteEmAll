@@ -64,12 +64,15 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentScore;
     [SerializeField] TextMeshProUGUI bestTime;
     [SerializeField] TextMeshProUGUI currentTime;
+    [SerializeField] TextMeshProUGUI inGameTime;
     private bool scoreIsAdded = false;
 
     private void Update()
     {
 
         time += Time.deltaTime;
+        UpdateTimeText(time);
+
         if (currentHp < 0)
             GameOver();
         //life regen
@@ -132,7 +135,7 @@ public class PlayerStats : MonoBehaviour
     {
         int minutes = (int)(timeInSeconds / 60f);
         int seconds = (int)(timeInSeconds % 60f);
-
+        inGameTime.text = $"Time: {minutes:00}:{seconds:00}";
         currentTime.text = $"Time: {minutes:00}:{seconds:00}";
         int bestTimeMinutes = (int)(PlayerPrefs.GetFloat("BestTime", 0) / 60f);
         int bestTimeSeconds = (int)(PlayerPrefs.GetFloat("BestTime", 0) % 60f);

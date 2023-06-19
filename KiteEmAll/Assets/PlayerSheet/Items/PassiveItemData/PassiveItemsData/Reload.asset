@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f29f91c7dfeab5478ef4451b561b20a, type: 3}
-  m_Name: GemPullRangeUP
+  m_Name: Reload
   m_EditorClassIdentifier: 
-  itemName: GemPullRangeUP
-  icon: {fileID: 21300000, guid: dd0501c2f8aa62f4b8fdabe81434e218, type: 3}
+  itemName: Reload
+  icon: {fileID: 21300000, guid: 31e27fe9aae02a245a695927d4512ed3, type: 3}
   description: 
   maxHpBonusFlat: 0
   maxHpPercentAdd: 0
@@ -21,13 +21,13 @@ MonoBehaviour:
   regenHpBonusFlat: 0
   regenHpPercentAdd: 0
   regenHpPercentMult: 0
-  movementSpeedBonusFlat: 0
+  movementSpeedBonusFlat: 0.25
   movementSpeedBonusPercentAdd: 0
   movementSpeedBonusPercentMult: 0
   weaponAddedDamageBonusFlat: 0
   weaponDamageMultiBonusPercentAdd: 0
   weaponDamageMultiBonusPercentMult: 0
-  weaponActivationRateMultiBonusPercentAdd: 0
+  weaponActivationRateMultiBonusPercentAdd: 0.2
   weaponActivationRateMultiBonusPercentMult: 0
   additionalProjectilesBonusFlat: 0
   additionalProjectilesBonusPercentAdd: 0
@@ -46,6 +46,6 @@ MonoBehaviour:
   homingAngleBonusPercentMult: 0
   areaOfEffectMultiBonusPercentAdd: 0
   areaOfEffectMultiBonusPercentMult: 0
-  gemPickUpRadiusBonusFlat: 1
-  gemPickUpRadiusBonusPercentAdd: 0.1
+  gemPickUpRadiusBonusFlat: 0
+  gemPickUpRadiusBonusPercentAdd: 0
   gemPickUpRadiusBonusPercentMult: 0

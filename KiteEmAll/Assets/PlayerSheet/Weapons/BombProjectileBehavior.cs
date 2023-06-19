@@ -53,17 +53,6 @@ public class BombProjectileBehavior : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D hit)
-    {
-
-        EnemyBase enemy = hit.GetComponent<EnemyBase>();
-        if (enemy != null)
-        {
-            Instantiate(destroyParticleEffectPrefab, transform.position, Quaternion.identity);
-            enemy.TakeDamage(projectileDamage);
-            Destroy(gameObject);
-        }
-    }
 
     private void OnDestroy()
     {

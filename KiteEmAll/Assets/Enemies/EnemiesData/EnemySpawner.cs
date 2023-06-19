@@ -2,43 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class EnemyType
-{
-    public GameObject enemyPrefab;
-    public float spawnRate;
-}
-
-[System.Serializable]
-public class Wave
-{
-    public List<EnemyType> enemyTypes;
-    public float waveTime;
-}
-
 public class EnemySpawner : MonoBehaviour
 {
     private Transform playerTrasnform;
-    public List<Wave> waves;
     private int currentWaveIndex = 0;
     private float waveTimer = 0f;
+    [SerializeField] private EnemyWaves enemywaves;
     bool isSpawning = false;
+    float timer = 0;
+    float statMulti = 1;
     private void OnEnable()
     {
         playerTrasnform = transform.parent;
     }
     private void Update()
     {
-        if (currentWaveIndex <= waves.Count - 1)
+        timer += Time.deltaTime;
+        if (timer > 300)
+            statMulti += 0.001f * Time.deltaTime;
+        if (timer > 600)
+            statMulti += 0.001f * Time.deltaTime;
+        if (timer > 900)
+            statMulti += 0.005f * Time.deltaTime;
+        //Debug.Log(statMulti);
+        if (currentWaveIndex <= enemywaves.waves.Count - 1)
         {
             if (isSpawning == false)
             {
-                foreach (EnemyType enemyType in waves[currentWaveIndex].enemyTypes)
+                foreach (EnemyType enemyType in enemywaves.waves[currentWaveIndex].enemyTypes)
                 {
                     StartCoroutine(spawnEnemiesInWave(enemyType));
                 }
                 isSpawning = true;
-                StartCoroutine(waitUntilWaveEnds(waves[currentWaveIndex].waveTime));
+                StartCoroutine(waitUntilWaveEnds(enemywaves.waves[currentWaveIndex].waveTime));
             }
         }
         else
@@ -68,20 +64,18 @@ public class EnemySpawner : MonoBehaviour
                 yield break;
             }
 
-            InstantiateSetStatsEnemy(enemyType, playerTrasnform, 1);
+            InstantiateSetStatsEnemy(enemyType, playerTrasnform, statMulti);
 
             yield return new WaitForSeconds(1 / enemyType.spawnRate);
         }
     }
     private void InstantiateSetStatsEnemy(EnemyType enemyType, Transform playerTransform, float statMulti)
     {
-        float angle = Random.Range(0f, Mathf.PI * 2f); // Random angle around the circle
-        Vector3 spawnPosition = new Vector3(Mathf.Sin(angle) * 25f, Mathf.Cos(angle) * 25f, 0f); // Calculate position on the circle
+        float angle = Random.Range(0f, Mathf.PI * 2f);
+        Vector3 spawnPosition = new Vector3(Mathf.Sin(angle) * 25f, Mathf.Cos(angle) * 25f, 0f);
         spawnPosition += playerTransform.position;
-
         Quaternion randomRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
-
-        GameObject spawnedEnemy = Instantiate(enemyType.enemyPrefab, spawnPosition, randomRotation); // Use transform.rotation here
+        GameObject spawnedEnemy = Instantiate(enemyType.enemyPrefab, spawnPosition, randomRotation);
         spawnedEnemy.GetComponent<EnemyBase>().SetTargetAndStatMulti(playerTransform, statMulti);
     }
 

@@ -23,6 +23,6 @@ public class WeaponManager : MonoBehaviour
     public void AddWeapon(WeaponData weaponData)
     {
         GameObject weaponGameObject = Instantiate(weaponData.weaponBasePrefab, weaponObjectsContainer);
-
+        weaponGameObject.transform.SetParent(this.transform);
     }
 }

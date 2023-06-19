@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5289bdbefb74cd643aba9c7da901fd8f, type: 3}
+  m_Name: "EnemyWavesPrzyk\u0142ad"
+  m_EditorClassIdentifier: 
+  waves:
+  - enemyTypes:
+    - enemyPrefab: {fileID: 875159615488160594, guid: fb1039d6edda2264bb477afd588bb9cd, type: 3}
+      spawnRate: 1
+    - enemyPrefab: {fileID: 3617009139246085642, guid: e530ece61c002e44985721a3fe5cc469, type: 3}
+      spawnRate: 1
+    - enemyPrefab: {fileID: 5824729568022452759, guid: 077534498dd88ff41a70a2d52aacd8ee, type: 3}
+      spawnRate: 1
+    - enemyPrefab: {fileID: 7566792966344354993, guid: c811745809d69fb4fb81c88c769fc196, type: 3}
+      spawnRate: 1
+    - enemyPrefab: {fileID: 6851028805908261250, guid: a2bb1e7741d6bd8419c907a4429b117f, type: 3}
+      spawnRate: 1
+    - enemyPrefab: {fileID: 4974081340115048080, guid: da2ade261ececfe4e9c354fabe99224f, type: 3}
+      spawnRate: 1
+    - enemyPrefab: {fileID: 9079564664016166934, guid: 79605f40169bd824b9ba54568832e378, type: 3}
+      spawnRate: 1
+    - enemyPrefab: {fileID: 2602698421382822514, guid: 6a56de2db346cfb40a68a6faf108cfc6, type: 3}
+      spawnRate: 1
+    waveTime: 60
